@@ -1,0 +1,1 @@
+../app/uart_printf_retarget.c:7:5:__io_putchar	24	static

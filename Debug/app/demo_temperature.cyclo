@@ -1,0 +1,3 @@
+../app/demo_temperature.c:17:6:temperature_process	3
+../app/demo_temperature.c:31:6:temperature_init	2
+../app/demo_temperature.c:48:12:get_th_values	1
