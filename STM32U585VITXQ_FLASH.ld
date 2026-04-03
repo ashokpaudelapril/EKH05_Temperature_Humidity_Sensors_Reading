@@ -22,7 +22,7 @@
 *****************************************************************************
 ** @attention
 **
-** Copyright (c) 2024 STMicroelectronics.
+** Copyright (c) 2026 STMicroelectronics.
 ** All rights reserved.
 **
 ** This software is licensed under terms that can be found in the LICENSE file
@@ -37,6 +37,7 @@ ENTRY(Reset_Handler)
 
 /* Highest address of the user mode stack */
 _estack = ORIGIN(RAM) + LENGTH(RAM);	/* end of "RAM" Ram type memory */
+_sstack = _estack - _Min_Stack_Size;
 
 _Min_Heap_Size = 0x200;	/* required amount of heap  */
 _Min_Stack_Size = 0x400;	/* required amount of stack */
@@ -46,8 +47,7 @@ MEMORY
 {
   RAM	(xrw)	: ORIGIN = 0x20000000,	LENGTH = 768K
   SRAM4	(xrw)	: ORIGIN = 0x28000000,	LENGTH = 16K
-  FLASH	 (rx)	: ORIGIN = 0x08000000,	LENGTH = 2032K
-  CONFIG (r)	: ORIGIN = 0x081FC000,	LENGTH = 16K
+  FLASH	(rx)	: ORIGIN = 0x08000000,	LENGTH = 2048K
 }
 
 /* Sections */
@@ -58,12 +58,6 @@ SECTIONS
   {
     KEEP(*(.isr_vector)) /* Startup code */
   } >FLASH
-
-  .mmconfig :
-  {
-    mmconfig_start  = ORIGIN(CONFIG);
-    mmconfig_end    = ORIGIN(CONFIG) + LENGTH(CONFIG);
-  }
 
   /* The program code and other data into "FLASH" Rom type memory */
   .text :
