@@ -9,6 +9,11 @@ This folder contains the minimum SHT4x temperature/humidity sources extracted fr
 - `sht4x/*` (Sensirion SHT4x driver and I2C helpers)
 - `app/main_temp_snippet.c` (example usage for printing)
 
+Folder notes:
+
+- [app/README.md](/Users/ashokpaudelapril/1.7.4_Wifi_Halow/EKH05_Temperature_Humidity_Sensors_Reading/app/README.md)
+- [sht4x/README.md](/Users/ashokpaudelapril/1.7.4_Wifi_Halow/EKH05_Temperature_Humidity_Sensors_Reading/sht4x/README.md)
+
 ## How To Use In A New STM32CubeIDE Project
 
 1. Create a new STM32U585 project (or duplicate your existing EKH05 project).
